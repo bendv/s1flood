@@ -19,4 +19,6 @@ Omaha, Nebraska, 2019-03-25: https://code.earthengine.google.com/5bdf08bae781e45
 
 Central Greece, 2018-03-01: https://code.earthengine.google.com/3ee7b5408c7a7aa1ee13988afa6236c9  
 
+## Reference
 
+DeVries, B., Huang, C-Q., Armston, J. Huang, W., Jones, J.W. and Lang M.W. 2020. Rapid and robust monitoring of floods using Sentinel-1 and Landsat data on the Google Earth Engine. Remote Sensing of Environment, 24:111664,  [doi:10.1016/j.rse.2020.111664](10.https://doi.org/10.1016/j.rse.2020.111664).
