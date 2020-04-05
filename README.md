@@ -1,9 +1,18 @@
 # s1flood
 GEE flood algorithm as described in DeVries et al., Remote Sensing of Environment (2020)
 
-Link to GEE repository:
-https://code.earthengine.google.com/?accept_repo=users/bdv/s1flood  
+Load the repository by including the following line in your script:
 
+```javascript
+var s1flood = require('users/bdv/s1flood');
+```
+
+Specific scripts (functions) can be accessed as follows:
+
+```javascript
+var zscore = require('users/bdv/s1flood:zscore');
+var mapFloods = require('users/bdv/s1flood:mapFloods');
+```
 
 ## Examples
 
@@ -22,3 +31,4 @@ Central Greece, 2018-03-01: https://code.earthengine.google.com/3ee7b5408c7a7aa1
 ## Reference
 
 DeVries, B., Huang, C-Q., Armston, J. Huang, W., Jones, J.W. and Lang M.W. 2020. Rapid and robust monitoring of floods using Sentinel-1 and Landsat data on the Google Earth Engine. Remote Sensing of Environment, 24:111664,  [doi:10.1016/j.rse.2020.111664](10.https://doi.org/10.1016/j.rse.2020.111664).
+
