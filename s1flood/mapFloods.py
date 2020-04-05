@@ -9,7 +9,6 @@ except ImportError:
     has_eedswe = False
 
 
-
 def mapFloods(
     z, 
     zvv_thd, 
@@ -23,6 +22,34 @@ def mapFloods(
     doy_end = 366
     ):
     '''
+    Generates a flood map from a Sentinel-1 image using the Z-score flood mapping algorithm described in DeVries et al. (2020), RSE.
+
+    Args:
+    =====
+
+    z:              ee.Image object from the 'COPERNICUS/S1_GRD' ImageCollection
+    zvv_thd:        VV Z-score threshold (Z_VV < zvv_thd indicates floods)
+    zvh_thd:        VH Z-score threshold (Z_VH < zvh_thd indicates floods)
+    pow_thd:        Open water probability threshold (in %) applied to JRC Global Surface Water ImageCollection (as well as DSWE, if eedswe is installed). Values abovfe this threshold are interpreted as permanent open water (90)
+    pin_thd:        Inundation probability threshold (in %) applied to historical DSWE class probabilities, or the JRC Global Surface Water dataset if eedswe is not available. Values above this threshold are interpreted as historical seasonal inundation. (25)
+    use_dswe:       Use historical DSWE data? The `eedswe` package must be installed.
+    dswe_start:     Start date (YYYY-MM-DD) for DSWE class probabilities.
+    dswe_end:       End date (YYYY-MM-DD) for DSWE class probabilities.
+    doy_start:      Day-of-year start for DSWE class probabilities.
+    doy_end:        Day-of-year end for DSWE class probabilities.
+
+    Returns:
+    ========
+    An ee.Image object with values corresponding to flood classes:
+        0 - non-water; non-flood
+        1 - VV flood flag only
+        2 - VH flood flag only
+        3 - VV and VH flood flag
+        10 - prior seasonal inundation; no flag
+        11 - prior seasonal inundation; VV flood flag only
+        12 - prior seasonal inundation; VH flood flag only
+        13 - prior seasonal inundation; VV and VH flood flag
+        20 - permanent open water
     '''
 
     if use_dswe and not has_eedswe:
@@ -93,4 +120,6 @@ floodPalette = [
     '#000000',
     '#08306B' # 20 - permanent open water
   ]
+
+
 

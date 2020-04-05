@@ -13,9 +13,11 @@ ee.Initialize()
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
+exec(read('s1flood/__version__.py'))
+
 setup(
     name = 's1flood',
-    version = '0.0.1',
+    version = __version__,
     packages = ['s1flood',],
     license = 'MIT',
     long_description = read('README.md'),
