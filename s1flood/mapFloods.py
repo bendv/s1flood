@@ -73,7 +73,7 @@ def mapFloods(
             ee.Filter.date(dswe_start, dswe_end),
             ee.Filter.dayOfYear(doy_start, doy_end)
             ]
-        pdswe = dswe.cdswe(dswe_filters)
+        pdswe = cdswe(dswe_filters)
         pinun = pdswe.select("pDSWE1").add(pdswe.select("pDSWE2")).add(pdswe.select("pDSWE3"))
         ow = ow.where(pdswe.select("pDSWE1").gte(ee.Image(pow_thd)), 1)
         inun = pinun.gte(pin_thd)
