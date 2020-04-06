@@ -53,6 +53,8 @@ python -c "import ee; ee.Initialize()"
 
 Follow the instructions after running this code.
 
+### Examples
+
 Some example notebooks are included in the "examples/" directory. To run these, you need to install the `geemap` package and jupyter:
 
 ```bash
