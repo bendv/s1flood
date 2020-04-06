@@ -1,5 +1,10 @@
 # s1flood
-GEE flood algorithm as described in DeVries et al., Remote Sensing of Environment (2020)
+
+Google Earth Engine (GEE) flood algorithm as described in DeVries et al., Remote Sensing of Environment (2020).
+
+An account on the GEE is required to use `s1flood`. To sign up for an account, go to https://earthengine.google.com.
+
+## 1. On the GEE Playground
 
 Load the repository by including the following line in your script:
 
@@ -14,7 +19,7 @@ var zscore = require('users/bdv/s1flood:zscore');
 var mapFloods = require('users/bdv/s1flood:mapFloods');
 ```
 
-## Examples
+### Examples
 
 Summary stats demo: https://code.earthengine.google.com/fe91cf1ab5df51fe107dd9b07f84835a  
 
@@ -27,6 +32,33 @@ The Bahamas (Hurricane Dorian), 2019-09-04: https://code.earthengine.google.com/
 Omaha, Nebraska, 2019-03-25: https://code.earthengine.google.com/5bdf08bae781e45564bc8c6b31d4067e  
 
 Central Greece, 2018-03-01: https://code.earthengine.google.com/3ee7b5408c7a7aa1ee13988afa6236c9  
+
+## 2. Python Package
+
+To install the `s1flood` python package using conda:
+
+```bash
+conda create -n ee python earthengine-api
+conda activate ee
+git clone https://github.com/bendv/s1flood
+cd s1flood
+python setup.py install
+```
+
+You will need to authrorize use of your GEE account the first time you load and inialize the `ee` module:
+
+```bash
+python -c "import ee; ee.Initialize()"
+```
+
+Follow the instructions after running this code.
+
+Some example notebooks are included in the "examples/" directory. To run these, you need to install the `geemap` package and jupyter:
+
+```bash
+conda install geemap jupyter
+jupyter notebook
+```
 
 ## Reference
 
