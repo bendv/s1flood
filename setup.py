@@ -17,7 +17,8 @@ setup(
     long_description = read('README.md'),
     long_description_content_type='text/markdown',
     install_requires = [
-        'earthengine_api'
+        'earthengine_api',
+        'httplib2shim'
         ],
     author = 'Ben DeVries',
     author_email = 'bdv@uoguelph.ca',
