@@ -1,0 +1,5 @@
+build/
+dist/
+s1flood.egg-info/
+.ipynb_checkpoints/
+scratch/
