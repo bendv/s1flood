@@ -35,14 +35,11 @@ Central Greece, 2018-03-01: https://code.earthengine.google.com/3ee7b5408c7a7aa1
 
 ## 2. Python Package
 
-To install the `s1flood` python package using conda:
+To install the `s1flood` python package into a conda environment:
 
 ```bash
 conda create -n ee python earthengine-api
 conda activate ee
-git clone https://github.com/bendv/s1flood
-cd s1flood
-python setup.py install
 ```
 
 You will need to authrorize use of your GEE account the first time you load and inialize the `ee` module:
@@ -52,6 +49,12 @@ python -c "import ee; ee.Initialize()"
 ```
 
 Follow the instructions after running this code.
+
+Finally, install `s1flood` using pip.
+
+```bash
+pip install s1flood
+```
 
 ### Using DSWE
 
