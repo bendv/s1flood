@@ -53,12 +53,20 @@ python -c "import ee; ee.Initialize()"
 
 Follow the instructions after running this code.
 
+### Using DSWE
+
+In addition to using Sentinel-1 backscatter anomalies (Z-scores) to map floods, Landsat data are used to map historical inundation and permanent open water. Two options are avialable for the historical inundaiton and permanent open water mapping:  
+1. Exclusive use of the JRC Global Surface Water (GSW) dataset. Two probability thresholds are applied: 90% for permanent open water and 25% for seasonal inundation.  
+2. Combined use of the JRC-GSW and the Dynamic Surface Water Extent (DSWE). The two thresholds described in (1) are applied to both datasets to define permanent open water and seasonal inundation.  
+
+Option (1) is used by default, and Option (2) is triggered by the `use_dswe` argument in the `mapFloods()` function. Use of this option requires installation of the `eedswe` package, available [here](https://github.com/bendv/eedswe). `mapFloods()` will default to Option (1) with a warning if `eedswe` is not installed and `use_dswe` is `True`.
+
 ### Examples
 
-Some example notebooks are included in the "examples/" directory. To run these, you need to install the `geemap` package and jupyter:
+Some example notebooks are included in the "examples/" directory. To run these, you also need to install `geemap`, `matplotlib`, `pandas` and `jupyter`:
 
 ```bash
-conda install geemap jupyter
+conda install geemap matplotlib pandas jupyter
 jupyter notebook
 ```
 
