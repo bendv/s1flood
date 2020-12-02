@@ -102,6 +102,6 @@ def calc_zscore(x, start, end, mode = "IW", direction = "DESCENDING"):
     def _calcz(y):
         return y \
             .divide(basesd) \
-            .set({'system:time_start': x.get('system:time_start')})
+            .set({'system:time_start': y.get('system:time_start')})
     return anom.map(_calcz)
 
